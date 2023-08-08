@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MentorshipProgram.Session2.MyQueueProgram;
+using static MentorshipProgram.Session2.MyStackProgram;
 
 namespace Benchmark
 {
@@ -11,8 +12,8 @@ namespace Benchmark
     {
         public static void Main(string[] args)
         {
-            var arr = new int[] { 4, 0, 4, 3, 3 };
-            Console.WriteLine(FindMaxAverage(arr, 5));
+            var haystack = "sadbutsad"; var needle = "sad";
+            Console.WriteLine(StrStr(haystack, needle));
         }
 
         public static double FindMaxAverage(int[] nums, int k)
@@ -76,6 +77,13 @@ namespace Benchmark
                 else return false;
             }
             return true;
+        }
+
+        public static int StrStr(string haystack, string needle)
+        {
+            var result = haystack.IndexOf(needle);
+            if (result < 0) return -1;
+            return result;
         }
     }
 }
